@@ -1,0 +1,24 @@
+<template>
+    <b>This is my first LWC Component!</b>
+    <div if:true={isVisibility}>
+        <p>This content is visible</p>
+        <p>Visibility is : {isVisibility}</p>
+    </div>
+    <div if:false={isVisibility}>
+        <p>This content is not visible</p>
+        <p>Visibility is : {isVisibility}</p>
+    </div>
+    <lightning-button label="Toggle button" onclick={toggleVisibility}></lightning-button>
+
+
+    <div>
+        <p>count = {count}</p>
+        <div if:true={evenOrOdd}>
+            <p>count is even</p>
+        </div>
+        <div if:false={evenOrOdd}>
+            <p>count is odd</p>
+        </div>
+        <lightning-button label="Increment count" onclick={handleClick}></lightning-button>
+    </div>
+</template>

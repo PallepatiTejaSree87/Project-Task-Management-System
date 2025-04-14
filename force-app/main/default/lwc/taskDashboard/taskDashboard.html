@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="All Tasks" icon-name="custom:custom63">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-var-p-around_medium">
+                    <lightning-combobox
+                        class="project"
+                        name="progress"
+                        label="Projects"
+                        value={projectvalue}
+                        placeholder="Select Progress"
+                        options={projectValuesCombo}
+                        onchange={handleChangeproject}>
+                    </lightning-combobox>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-var-p-around_medium">
+                    <lightning-combobox
+                        class="user"
+                        name="progress"
+                        label="Users"
+                        value={userValue}
+                        placeholder="Select User"
+                        options={userValuesCombo}
+                        onchange={handleChangeuser}>
+                    </lightning-combobox>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={temptasks}
+                columns={columns}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onsort={handleSort}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
